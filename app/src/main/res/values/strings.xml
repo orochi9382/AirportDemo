@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AirportDemo</string>
+    <string name="title_home">航班</string>
+    <string name="title_exchange_rate">匯率</string>
+    <string name="terminal_gate">航廈/登機門 ：%s/%s</string>
+    <string name="flight_num">航機班號 : %s</string>
+    <string name="flight_des">%s\n%s\n｜\n%s\n%s</string>
+    <string name="confirm">確認</string>
+    <string name="notice">提醒</string>
+    <string name="error_msg">發生異常請稍後再試</string>
+    <string name="estimated_time">預計時間</string>
+    <string name="real_time">實際時間</string>
+</resources>
