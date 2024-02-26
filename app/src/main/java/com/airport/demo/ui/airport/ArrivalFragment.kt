@@ -72,11 +72,13 @@ class ArrivalFragment : Fragment() {
         super.onPause()
         vm.bindingAirportFlyEntity.removeObserver(arrivalObserver)
         vm.onMessageError.removeObserver(errorObserver)
+        vm.loading.removeObserver(loadingObserver)
     }
 
     private fun liveBinding(){
         vm.bindingAirportFlyEntity.observe(viewLifecycleOwner, arrivalObserver)
         vm.onMessageError.observe(viewLifecycleOwner,errorObserver)
+        vm.loading.observe(viewLifecycleOwner,loadingObserver)
     }
 
     private val arrivalObserver = Observer<List<AirPortFlyEntity>> {
@@ -91,6 +93,20 @@ class ArrivalFragment : Fragment() {
         it.let{
             requireActivity().runOnUiThread {
                 DialogUtil().showDialog(requireActivity())
+            }
+        }
+    }
+
+
+    private val loadingObserver = Observer<Boolean> {
+        it.let{
+            requireActivity().runOnUiThread {
+                if (it){
+                    _binding?.progress?.visibility = View.VISIBLE
+                }else{
+                    _binding?.progress?.visibility = View.GONE
+                }
+
             }
         }
     }

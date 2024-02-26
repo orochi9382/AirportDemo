@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+  <group android:scaleX="0.48"
+      android:scaleY="0.48"
+      android:translateX="266.24"
+      android:translateY="266.24">
+    <path
+        android:pathData="M85.3,789.3h853.3v85.3H85.3z"
+        android:fillColor="#546E7A"/>
+    <path
+        android:pathData="M673,306.7s-223.6,-152.8 -266.1,-156.8C364.5,146 320,163.3 320,163.3l177.2,191.4 175.9,-47.9z"
+        android:fillColor="#7986CB"/>
+    <path
+        android:pathData="M42.7,256l133.1,191.8 121.6,-88.8L106.7,234.7z"
+        android:fillColor="#3F51B5"/>
+    <path
+        android:pathData="M245.1,368.7s371,-133.8 472.9,-165.6c122.2,-38.1 235.1,13.5 242,35.7 6.3,20.3 -26.1,53.4 -156.8,94.2 -130.7,40.8 -391.4,140.2 -391.4,140.2S224.3,532 64,448c113.5,-54 181.1,-79.3 181.1,-79.3z"
+        android:fillColor="#9FA8DA"/>
+    <path
+        android:pathData="M686.9,374.7c-5.2,29.7 -121.9,252.1 -156.8,276.5C495.2,675.7 448,682.7 448,682.7c54.2,-220.6 55,-220.4 62.4,-262.5 5.2,-29.7 181.8,-75.2 176.5,-45.5z"
+        android:fillColor="#9FA8DA"/>
+    <path
+        android:pathData="M923.7,212.3c-16.5,-7.3 -38,-13.9 -62.5,-18.1l10.4,34.1 52.1,-16zM797.9,206.2l40.8,-12.5 12.5,40.8 -40.8,12.5z"
+        android:fillColor="#283593"/>
+    <path
+        android:pathData="M438.7,378.9m-21.3,0a21.3,21.3 0,1 0,42.7 0,21.3 21.3,0 1,0 -42.7,0Z"
+        android:fillColor="#283593"/>
+    <path
+        android:pathData="M519.3,351m-21.3,0a21.3,21.3 0,1 0,42.7 0,21.3 21.3,0 1,0 -42.7,0Z"
+        android:fillColor="#283593"/>
+    <path
+        android:pathData="M620.1,315.9a21.4,21.4 0,0 1,-13.1 27.2,21.4 21.4,0 0,1 -27.2,-13.2 21.4,21.4 0,0 1,13.1 -27.2,21.4 21.4,0 0,1 27.2,13.2z"
+        android:fillColor="#283593"/>
+    <path
+        android:pathData="M680.6,295m-21.3,0a21.3,21.3 0,1 0,42.7 0,21.3 21.3,0 1,0 -42.7,0Z"
+        android:fillColor="#283593"/>
+  </group>
+</vector>

@@ -15,14 +15,20 @@ class AirportFlyViewModel(private val repo:AirportFlyRepo) : ViewModel() {
     private val _bindingAirportFlyEntity = MutableLiveData<List<AirPortFlyEntity>>()
     val bindingAirportFlyEntity: LiveData<List<AirPortFlyEntity>> = _bindingAirportFlyEntity
 
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> = _loading
+
     private val _onMessageError = MutableLiveData<Any>()
     val onMessageError: LiveData<Any> = _onMessageError
 
     fun requestFlyInfo(flyType:String){
         if (checkUpdate(flyType)){
+            _loading.value = true
             repo.fetchAirFlyInfo(flyType,object :OperationCallback<List<Any>>{
 
                 override fun onSuccess(data: Any?) {
+                    _loading.value = false
                     updateTimesTamp(flyType)
                     (data as List<AirPortFlyEntity>).let {
                         _bindingAirportFlyEntity.value = it
@@ -32,6 +38,7 @@ class AirportFlyViewModel(private val repo:AirportFlyRepo) : ViewModel() {
 
 
                 override fun onError(error: String?) {
+                    _loading.value = false
                     error?.let {
                         Log.d("Ryan","error = $error")
                         _onMessageError.postValue(it)

@@ -70,7 +70,8 @@ class AirPortAdapter(private var info:List<AirPortFlyEntity>) :RecyclerView.Adap
                 info.ArrivalAirport)
 
             _binding.flightPositionDes.text = flightDes
-            val terminal = c.getString(R.string.terminal_gate,info.Terminal,info.Gate)
+            val gate = info.Gate ?: ""
+            val terminal = c.getString(R.string.terminal_gate,info.Terminal,gate)
             _binding.terminal.text = terminal
         }
     }

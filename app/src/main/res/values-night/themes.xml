@@ -13,4 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="DarkText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#313531</item>
+    </style>
 </resources>
