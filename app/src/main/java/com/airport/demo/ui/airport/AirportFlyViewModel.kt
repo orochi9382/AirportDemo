@@ -54,7 +54,6 @@ class AirportFlyViewModel(private val repo:AirportFlyRepo) : ViewModel() {
     private fun checkUpdate(flyType:String):Boolean{
         if (flyType == "A"){
             val dd = System.currentTimeMillis() - arrivalTimestamp
-            Log.d("Ryan","xxx = $dd")
             return System.currentTimeMillis() - arrivalTimestamp > 180000
         }else if (flyType == "D"){
             return System.currentTimeMillis() - departureTimestamp > 180000

@@ -3,7 +3,6 @@ package com.airport.demo.ui.airport.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airport.demo.R
 import com.airport.demo.databinding.AdapterAirpoartInfoBinding
@@ -15,8 +14,8 @@ class AirPortAdapter(private var info:List<AirPortFlyEntity>) :RecyclerView.Adap
     private var pageNum = 50
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val _binding = AdapterAirpoartInfoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return MViewHolder(_binding)
+        val binding = AdapterAirpoartInfoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return MViewHolder(binding)
     }
 
     override fun getItemCount(): Int {

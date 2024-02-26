@@ -1,9 +1,9 @@
 package com.airport.demo.di
 
+import com.airport.demo.data.ApiClient
 import com.airport.demo.data.repo.CurrencyRepo
 import com.airport.demo.data.source.CurrencyDataSource
 import com.airport.demo.ui.currency.factory.CurrencyFactory
-import com.emedinaa.kotlinmvvm.data.ApiClient
 
 object CurrencyInjection {
     private var currencyDataSource: CurrencyDataSource? = null

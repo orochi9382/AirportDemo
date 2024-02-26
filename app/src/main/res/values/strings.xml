@@ -10,4 +10,6 @@
     <string name="error_msg">發生異常請稍後再試</string>
     <string name="estimated_time">預計時間</string>
     <string name="real_time">實際時間</string>
+    <string name="airplane_take_off">起飛班機</string>
+    <string name="airplane_landing">抵達班機</string>
 </resources>

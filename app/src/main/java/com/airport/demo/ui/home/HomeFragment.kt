@@ -22,8 +22,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
 
@@ -60,11 +58,11 @@ class HomeFragment : Fragment() {
             when (position){
                 0 -> {
                     icon = R.drawable.ic_airplane_take_off
-                    text = "起飛班機"
+                    text = getString(R.string.airplane_take_off)
                 }
                 1 -> {
                     icon = R.drawable.ic_airplane_landing
-                    text = "抵達班機"
+                    text = getString(R.string.airplane_landing)
                 }
                 else -> 0
             }

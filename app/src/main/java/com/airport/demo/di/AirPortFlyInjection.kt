@@ -1,9 +1,9 @@
 package com.airport.demo.di
 
+import com.airport.demo.data.ApiClient
 import com.airport.demo.data.repo.AirportFlyRepo
 import com.airport.demo.data.source.AirPortFlyDataSource
 import com.airport.demo.ui.airport.AirportFlyFactory
-import com.emedinaa.kotlinmvvm.data.ApiClient
 
 object AirPortFlyInjection {
     private var airportFlyDataSource: AirPortFlyDataSource? = null

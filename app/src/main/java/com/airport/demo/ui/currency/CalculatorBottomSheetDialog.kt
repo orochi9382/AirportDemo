@@ -37,15 +37,14 @@ class CalculatorBottomSheetDialog : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         calculator = Calculator()
-        createCaculator()
+        createCalculator()
     }
 
     fun setListener(calculateListener: CalculateListener){
         this.calculateListener = calculateListener
     }
 
-    fun createCaculator(){
-        // 使用一般方法一個一個引入XML布置文件的物件
+    private fun createCalculator(){
         _binding?.let {
             val resultTextView = it.resultTextView
 
@@ -70,11 +69,10 @@ class CalculatorBottomSheetDialog : BottomSheetDialogFragment() {
             val buttonClear = it.buttonClear
             val buttonEqual = it.equal
             buttonClear.setOnClickListener {
-                calculator.clear() // 調用 calculator 的清除方法
+                calculator.clear()
                 resultTextView.text = calculator.getCurrentInput()
             }
 
-            // 設置數字按鈕的點擊事件
             digitButtons.forEachIndexed { index, button ->
                 button.setOnClickListener {
                     calculator.appendDigit(index)
@@ -82,7 +80,6 @@ class CalculatorBottomSheetDialog : BottomSheetDialogFragment() {
                 }
             }
 
-            // 設置運算符號按鈕的點擊事件
             buttonAdd.setOnClickListener {
                 calculator.setOperator("+")
             }
@@ -99,45 +96,16 @@ class CalculatorBottomSheetDialog : BottomSheetDialogFragment() {
                 calculator.setOperator("/")
             }
 
-            // 設置等於按鈕的點擊事件
             buttonEqual.setOnClickListener {
                 val result = calculator.calculate().toString()
                 resultTextView.text = result
-//                ApiClient.build("https://api.freecurrencyapi.com")
-//                    ?.getCurrencies("fca_live_QtJK7Ca2yuxrQXxI9v5vOj6OUjJgpKV6eGLBvMpg","USD","EUR,USD,JPY,KRW,CNY,HKD")
-//                    ?.enqueue(object:Callback<CurrencyDto>{
-//                        override fun onResponse(
-//                            call: Call<CurrencyDto>,
-//                            response: Response<CurrencyDto>
-//                        ) {
-//                            response.body()?.let {
-//
-//                                Log.d("Ryan","sss = ${it.data?.CNY}")
-//                            }
-//                        }
-//
-//                        override fun onFailure(call: Call<CurrencyDto>, t: Throwable) {
-//
-//                        }
-//
-//                    })
 
-                Log.d("Ryan","result = $result"  )
                 if (result != "NaN" && result != "Error") {
-                    Log.d("Ryan","callback"  )
                     calculateListener?.callback(result)
                     dismiss()
                 }
-
-
-
-
             }
 
-
-
-
-            // 設置小數點按鈕的點擊事件
             buttonDecimal.setOnClickListener {
                 calculator.appendDigit(".")
                 resultTextView.text = calculator.getCurrentInput()

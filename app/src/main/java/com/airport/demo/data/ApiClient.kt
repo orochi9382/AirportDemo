@@ -1,4 +1,4 @@
-package com.emedinaa.kotlinmvvm.data
+package com.airport.demo.data
 
 import com.airport.demo.data.dto.AirPortFlyDto
 import com.airport.demo.data.dto.CurrencyDto
@@ -10,21 +10,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import java.sql.ClientInfoStatus
 import java.util.concurrent.TimeUnit
 
-
-/**
- * @author Eduardo Medina
- */
 object ApiClient {
     private const val API_BASE_URL = "https://e-traffic.taichung.gov.tw"
 
     private var servicesApiInterface: ServicesApiInterface? = null
 
     fun build(baseUrl: String? = null): ServicesApiInterface {
-
-
         val url = baseUrl?.let {
             baseUrl
         } ?: API_BASE_URL

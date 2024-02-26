@@ -1,5 +1,6 @@
 package com.airport.demo.ui.currency
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,6 +26,7 @@ class CurrencyViewModel(val repo: CurrencyRepo) : ViewModel() {
 
             override fun onError(error: String?) {
                 error?.let {
+                    Log.e("Ryan","error = $it")
                     _onMessageError.postValue(it)
                 }
             }
