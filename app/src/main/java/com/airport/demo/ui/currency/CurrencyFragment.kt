@@ -85,7 +85,7 @@ class CurrencyFragment : Fragment() {
 
     private fun liveBinding(){
         vm.bindingExchangeEntity.observe(viewLifecycleOwner, currencyObserver)
-        vm.onMessageError.removeObserver(errorObserver)
+        vm.onMessageError.observe(viewLifecycleOwner, errorObserver)
     }
 
     private val currencyObserver = Observer<ExchangeEntity?> {
